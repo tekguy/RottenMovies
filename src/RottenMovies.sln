@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RottenMovies.Web", "RottenMovies.Web\RottenMovies.Web.csproj", "{75EB0272-9BC9-4AED-9087-C58250802513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RottenMovies.Common", "RottenMovies.Common\RottenMovies.Common.csproj", "{55A2FD21-B0B0-4989-BD2B-5443C99E485E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75EB0272-9BC9-4AED-9087-C58250802513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75EB0272-9BC9-4AED-9087-C58250802513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75EB0272-9BC9-4AED-9087-C58250802513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75EB0272-9BC9-4AED-9087-C58250802513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55A2FD21-B0B0-4989-BD2B-5443C99E485E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55A2FD21-B0B0-4989-BD2B-5443C99E485E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55A2FD21-B0B0-4989-BD2B-5443C99E485E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55A2FD21-B0B0-4989-BD2B-5443C99E485E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

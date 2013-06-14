@@ -1,0 +1,43 @@
+﻿@model RottenMovies.Web.Models.ViewModel.Home.SearchMoviesViewModel
+<div class="row-fluid">
+    <div class="span12">
+        <div class="hero-unit">
+            <h2>Search Movies</h2>
+            <div class="control-group">
+                Movie Name
+                <div class="controls">
+                    @Html.TextBoxFor(m=>m.Title, new{@data_bind="value: title, valueUpdate:'afterkeydown'"})
+                </div>
+            </div>
+            <div class="control-group">
+                <p>You are about to search for: <span id="movieTitle" data-bind="text: title"></span></p>
+                <div class="controls">
+                    <input type="button" id="btnSearch" value="Search" class="btn btn-primary" data-bind="click: performSearch" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var SearchMovieModel = function(title) {
+        this.title = ko.observable(title);
+        this.performSearch = function () {
+            var url = '@Url.Action("SearchMovies", "RottenTomatoe")';
+            //alert('Search at ' + url + ' ' + title);
+            $.ajax({
+                type: 'POST', 
+                url: url,
+                data: {title: title},
+                datatype: 'json',
+                success: function (data) {
+                    if (data == null) {
+                        alert('Something bad happened.');
+                    } else {
+                        alert(data);
+                    }
+                }
+            });
+        };
+    };
+    ko.applyBindings(new SearchMovieModel('Test'));
+</script>
