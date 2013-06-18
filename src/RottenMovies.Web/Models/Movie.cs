@@ -12,5 +12,7 @@ namespace RottenMovies.Web.Models
         public int Id { get; set; }
         [DataMember(Name = "title")]
         public string Title { get; set; }
+        [DataMember(Name = "synopsis")]
+        public string Synopsis { get; set; }
     }
 }

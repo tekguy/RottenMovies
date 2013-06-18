@@ -37,6 +37,7 @@ namespace RottenMovies.Web.Controllers
 
                 request.AddParameter("apikey", AppSetting.RottenAPIToken);
                 request.AddParameter("q", title);
+                request.AddParameter("page_limit", "2");
 
                 var response = client.Execute(request);
                 var content = response.Content; // raw content as string

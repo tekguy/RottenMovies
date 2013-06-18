@@ -10,34 +10,41 @@
                 </div>
             </div>
             <div class="control-group">
-                <p>You are about to search for: <span id="movieTitle" data-bind="text: title"></span></p>
+                <p>You are about to search for: "<span id="movieTitle" data-bind="text: title"></span>"</p>
                 <div class="controls">
                     <input type="button" id="btnSearch" value="Search" class="btn btn-primary" data-bind="click: performSearch" />
                 </div>
             </div>
         </div>
+        <div data-bind="template: { name: 'movie-template', foreach: movies }"></div>
     </div>
 </div>
+<script type="text/html" id="movie-template">
+    <h3 data-bind="text: Title"></h3>
+    <p data-bind="text: Synopsis"></p>
+    <hr />
+</script>
 <script type="text/javascript">
-    var SearchMovieModel = function(title) {
+    var SearchMovieModel = function (title) {
+        var self = this;
         this.title = ko.observable(title);
+        this.movies = ko.observableArray();
         this.performSearch = function () {
             var url = '@Url.Action("SearchMovies", "RottenTomatoe")';
-            //alert('Search at ' + url + ' ' + title);
             $.ajax({
                 type: 'POST', 
                 url: url,
-                data: {title: title},
+                data: {title: self.title},
                 datatype: 'json',
                 success: function (data) {
                     if (data == null) {
                         alert('Something bad happened.');
                     } else {
-                        alert(data);
+                        self.movies(data);
                     }
                 }
             });
         };
     };
-    ko.applyBindings(new SearchMovieModel('Test'));
+    ko.applyBindings(new SearchMovieModel('Jack'));
 </script>

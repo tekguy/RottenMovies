@@ -1,0 +1,27 @@
+﻿<canvas id="viewport" width="800" height="600"></canvas>
+
+<script language="javascript" type="text/javascript">
+    var sys = arbor.ParticleSystem();
+    sys.parameters({ stiffness: 900, repulsion: 2000, gravity: true, dt: 0.015 });
+    sys.renderer = Renderer("#viewport");
+    var data = {
+      nodes: {
+          mpg: { 'color': 'red', 'shape': 'dot', 'label': 'MPG', 'alpha': 1, 'radius': 22},
+          aa: { 'color': 'red', 'shape': 'square', 'label': 'Alex A', 'alpha': 1 },
+          re: { 'color': 'red', 'shape': 'square', 'label': 'Rick E', 'alpha': 1 },
+          ml: { 'color': 'red', 'shape': 'square', 'label': 'Matt L', 'alpha': 1 },
+          gd: { 'color': 'green', 'shape': 'square', 'label': 'Gordon D', 'alpha': 0 },
+          dr: { 'color': 'green', 'shape': 'square', 'label': 'David R', 'alpha': 0 },
+          zh: { 'color': 'green', 'shape': 'square', 'label': 'Zach H', 'alpha': 0 },
+          my: { 'color': 'green', 'shape': 'square', 'label': 'Max Y', 'alpha': 0 },
+      },
+      edges: {
+          mpg: { aa: {}},
+          aa: { re: {} },
+          re: { ml: {} },
+          ml: { gd: {}, dr:{}, zh:{}, my:{} },
+      
+      }
+    };
+    sys.graft(data);
+</script>

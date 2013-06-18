@@ -72,6 +72,7 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Net.Http">
     </Reference>
@@ -132,9 +133,13 @@
     <Content Include="Assets\Css\site.css" />
     <Content Include="Assets\Img\glyphicons-halflings-white.png" />
     <Content Include="Assets\Img\glyphicons-halflings.png" />
+    <Content Include="Assets\Scripts\arbor-tween.js" />
+    <Content Include="Assets\Scripts\arbor.js" />
     <Content Include="Assets\Scripts\bootstrap.js" />
+    <Content Include="Assets\Scripts\graphics.js" />
     <Content Include="Assets\Scripts\jquery-1.7.2.min.js" />
     <Content Include="Assets\Scripts\knockout-2.2.1.js" />
+    <Content Include="Assets\Scripts\renderer.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -165,6 +170,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Demo.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\Apps.gordondurgha.com.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

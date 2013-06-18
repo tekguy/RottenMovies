@@ -12,6 +12,11 @@ namespace RottenMovies.Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "Demo",
+                url: "Demo",
+                defaults: new { controller = "Home", action = "Demo", id = UrlParameter.Optional }
+            );
 
             routes.MapRoute(
                 name: "Default",

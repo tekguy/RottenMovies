@@ -8,10 +8,12 @@ namespace RottenMovies.Web.Controllers
 {
     public class HomeController : Controller
     {
-        //
-        // GET: /Home/
-
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Demo()
         {
             return View();
         }
